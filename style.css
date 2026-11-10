@@ -39,9 +39,9 @@ html {
 }
 
 body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--body);
+    background: #f8f7f2;
+    color: #17231f;
+    font-family: "dm sans", sans-serif;
     line-height: 1.65;
     overflow-x: hidden;
     padding-top: 86px;
@@ -67,14 +67,17 @@ img {
 /* GENERAL LAYOUT */
 
 .hero {
-    width: min(100% - 64px, var(--max));
+    width: min(100% - 64px, 1180px);
     margin-inline: auto;
 }
 
 .section-space {
     padding-block: 105px;
-    padding-inline: max(32px, calc((100% - var(--max)) / 2));
+    padding-inline: max(32px, calc((100% - 1180px) / 2));
 }
+
+/* NAVIGATION */
+
 
 /* NAVIGATION */
 
@@ -87,7 +90,7 @@ img {
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #dcded6;
 
     position: fixed;
     top: 0;
@@ -99,13 +102,13 @@ img {
 }
 
 .logo {
-    font: 700 2rem var(--display);
+    font: 700 2rem "space grotesk", sans-serif;
     letter-spacing: -0.13em;
-    color: var(--ink);
+    color: #17231f;
 }
 
 .logo span {
-    color: var(--green);
+    color: #087b5b;
 }
 
 .logo i {
@@ -113,58 +116,10 @@ img {
     color: var(--orange);
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: clamp(18px, 3vw, 38px);
-    font-size: 0.83rem;
-    font-weight: 600;
-}
+/* HIDE CHECKBOX */
 
-.nav-links > a:not(.nav-cta) {
-    position: relative;
-    padding: 8px 0;
-    color: #526059;
-}
-
-.nav-links > a:not(.nav-cta)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 0;
-    height: 2px;
-    background: var(--green);
-    transition: width 0.25s;
-}
-
-.nav-links > a:hover::after,
-.nav-links > a.active::after {
-    width: 100%;
-}
-
-.nav-links > a.active {
-    color: var(--ink);
-}
-
-.nav-cta {
-    background: var(--ink);
-    color: white;
-    padding: 12px 19px;
-    border-radius: 30px;
-    transition: 0.2s;
-}
-
-.nav-cta:hover {
-    background: var(--green);
-    transform: translateY(-2px);
-}
-
-.menu-toggle {
+#menu-toggle {
     display: none;
-    background: none;
-    border: 0;
-    cursor: pointer;
 }
 
 /* HERO SECTION */
@@ -204,11 +159,11 @@ img {
 }
 
 .highlight-green {
-    color: var(--green);
+    color: #087b5b;
 }
 
 .highlight-orange {
-    color: var(--orange);
+    color: #f28a35;
 }
 
 .hero-intro {
@@ -244,12 +199,12 @@ img {
 }
 
 .button-dark {
-    background: var(--ink);
+    background: #17231f;
     color: white;
 }
 
 .button-dark:hover {
-    background: var(--green);
+    background: #087b5b;
     transform: translateY(-2px);
 }
 
@@ -260,8 +215,8 @@ img {
 }
 
 .button-outline:hover {
-    background: var(--green-soft);
-    border-color: var(--green);
+    background: #dceee3;
+    border-color: #087b5b;
 }
 
 /* HERO DECORATION */
@@ -307,7 +262,7 @@ img {
     border-radius: 48% 48% 18px 18px;
 
     background: #e6d9cd;
-    box-shadow: var(--shadow);
+    box-shadow: rgba(37, 53, 43, 0.09);
 }
 
 .portrait-frame img {
@@ -324,7 +279,7 @@ img {
     backdrop-filter: blur(14px);
 
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: var(--shadow);
+    box-shadow: rgba(37, 53, 43, 0.09);
 
     border-radius: 15px;
     padding: 15px 17px;
@@ -354,11 +309,11 @@ img {
 }
 
 .note-bottom strong {
-    font: 700 1.6rem var(--display);
+    font: 700 1.6rem "space grotesk", sans-serif;
 }
 
 .note-bottom small {
-    color: var(--muted);
+    color: #66716b;
     line-height: 1.4;
 }
 
@@ -366,8 +321,8 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    color: var(--green);
-    font: 600 1.2rem var(--display);
+    color: #087b5b;
+    font: 600 1.2rem "space grotesk", sans-serif;
     transform: rotate(9deg);
 }
 
@@ -391,7 +346,7 @@ img {
 /* INTRO STRIP */
 
 .intro-strip {
-    border-block: 1px solid var(--line);
+    border-block: 1px solid #dcded6;
     padding: 34px max(32px, calc((100% - var(--max)) / 2));
 
     display: grid;
@@ -406,7 +361,7 @@ img {
     font-size: 0.67rem;
     font-weight: 700;
     letter-spacing: 0.14em;
-    color: var(--muted);
+    color: #66716b;
 }
 
 .intro-strip h2 {
@@ -1211,10 +1166,10 @@ blockquote {
         grid-column: auto;
     }
 
-    .mobile-menu { 
-    display: block;
-    position: static;
 
+    .site-header {
+        height: 72px;
+        padding: 0 20px;
     }
 
     .menu-toggle {
@@ -1223,21 +1178,37 @@ blockquote {
         gap: 5px;
         padding: 10px;
         cursor: pointer;
-        list-style: none;
-    }
-
-    .menu-toggle::-webkit-details-marker {
-        display: none;
-    }
-
-    .menu-toggle::marker {
-        content: "";
     }
 
     .menu-toggle span {
         width: 23px;
         height: 2px;
         background: var(--ink);
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        right: 20px;
+        width: 220px;
+
+        background: var(--paper);
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    /* SHOW MENU WHEN CHECKED */
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
     }
 
     .nav-links {
@@ -1419,25 +1390,57 @@ blockquote {
 
 @media (min-width: 701px) {
 
-    .mobile-menu {
-        display: block;
-        position: static;
-    }
+   .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 3vw, 38px);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
 
-    .menu-toggle {
-        display: none;
-    }
+.nav-links > a:not(.nav-cta) {
+    position: relative;
+    padding: 8px 0;
+    color: #526059;
+}
 
-    .nav-links {
-        display: flex !important;
-        position: static;
-        width: auto;
-        flex-direction: row;
-        align-items: center;
-        gap: clamp(18px, 3vw, 38px);
-        padding: 0;
-        border: none;
-        box-shadow: none;
-        background: transparent;
-    }
+.nav-links > a:not(.nav-cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: var(--green);
+    transition: width 0.25s;
+}
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after {
+    width: 100%;
+}
+
+.nav-links > a.active {
+    color: var(--ink);
+}
+
+.nav-cta {
+    background: var(--ink);
+    color: white;
+    padding: 12px 19px;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.nav-cta:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+}
+
+/* HAMBURGER ICON - HIDDEN ON DESKTOP */
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
 }
