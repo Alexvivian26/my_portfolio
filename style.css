@@ -1183,7 +1183,7 @@ blockquote {
     .menu-toggle span {
         width: 23px;
         height: 2px;
-        background: var(--ink);
+        background: #f28a35;
         transition: 0.3s;
     }
 
